@@ -1,3 +1,7 @@
+# ********************************************************
+# Need to retry with actual items created like VPC, Subnets, Security Groups, etc.
+# ********************************************************
+
 Parameters:
   myKeyPair: 
     Description: Amazon EC2 Key Pair
@@ -140,7 +144,10 @@ Resources:
         - GroupId
 
 
-Outputs:
-  PublicDns:
-    Description: The Public DNS
-    Value: !Sub 'http://${LoadBalancer.DNSName}'
+# ********************************************************
+# After the import is successful, you can update the stack with a new template that includes the desired Outputs section.
+# ********************************************************
+# Outputs:
+#   PublicDns:
+#     Description: The Public DNS
+#     Value: !Sub 'http://${LoadBalancer.DNSName}'
